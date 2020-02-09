@@ -1,0 +1,20 @@
+module.exports.drawScaleCanvasMarker = function(getVCanvas, scaleMark) {
+  var vcanvas = getVCanvas();
+  var rect1 = {};
+  var rect2 = {};
+  rect1.x = vcanvas.width - scaleMark.short;
+  rect1.y = vcanvas.height - scaleMark.long;
+  rect1.w = vcanvas.width - scaleMark.short;
+  rect1.y = vcanvas.height - scaleMark.long;
+  rect1.h = vcanvas.height - scaleMark.long;
+  rect2.x = vcanvas.width - scaleMark.long;
+  rect2.w = vcanvas.width - scaleMark.long;
+  rect2.y = vcanvas.height - scaleMark.short;
+  rect2.h = vcanvas.height - scaleMark.short;
+  var vctx = vcanvas.getContext("2d");
+  vctx.save();
+  vctx.fillStyle = "#eb5d02";
+  vctx.fillRect(rect1.x, rect1.y, rect1.w, rect1.h);
+  vctx.fillRect(rect2.x, rect2.y, rect2.w, rect2.h);
+  vctx.restore();
+};
